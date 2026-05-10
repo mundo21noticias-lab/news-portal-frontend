@@ -14,7 +14,7 @@ export function OpinionSection({ articles }: OpinionSectionProps) {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
 
   return (
-    <section className="py-8 lg:py-12 bg-foreground text-background">
+    <section className="py-8 lg:py-12 bg-foreground text-background" spellCheck="false">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">

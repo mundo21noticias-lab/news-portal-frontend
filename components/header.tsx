@@ -26,7 +26,7 @@ export function Header({ categories = [] }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [breakingNews, setBreakingNews] = useState<NewsArticle[]>([]);
 
-  const rawDate = new Date().toLocaleDateString('es-ES', {
+  const rawDate = new Date().toLocaleDateString('es-DO', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
@@ -76,7 +76,7 @@ export function Header({ categories = [] }: HeaderProps) {
       <div className="border-b border-border bg-secondary">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between text-sm">
-            <p className="text-xs md:text-sm font-semibold text-white italic">
+            <p className="text-xs md:text-sm font-semibold text-white italic" spellCheck="false">
               "Es mejor una verdad dolorosa que una mentira inútil"
             </p>
             <span className="hidden md:block text-white">{currentDate}</span>

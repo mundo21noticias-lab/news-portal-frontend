@@ -45,7 +45,7 @@ export function TrendingSection({ articles }: TrendingSectionProps) {
   };
 
   return (
-    <section className="py-8 lg:py-12 bg-muted/50">
+    <section className="py-8 lg:py-12 bg-muted/50" spellCheck="false">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

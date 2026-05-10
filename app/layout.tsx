@@ -84,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${sourceSans.variable}`} spellCheck="false" suppressHydrationWarning>
+    <html lang="es-DO" className={`${playfair.variable} ${sourceSans.variable}`} spellCheck="false" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#FF6A00" />
