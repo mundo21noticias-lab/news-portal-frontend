@@ -1,0 +1,29 @@
+.logoExpanded {
+  padding: 24px 0;
+  transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoCompressed {
+  padding: 6px 0;
+  transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoLarge {
+  height: 200px;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoSmall {
+  height: 48px;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  .logoLarge {
+    height: 100px;
+  }
+
+  .logoSmall {
+    height: 40px;
+  }
+}

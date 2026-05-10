@@ -1,0 +1,49 @@
+{
+  "name": "MundoXXI - Noticias de República Dominicana",
+  "short_name": "MXI Noticias",
+  "description": "Es mejor una verdad dolorosa que una mentira inútil. Noticias de RD, América Latina y el mundo",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#FF6A00",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "150x50",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "news"
+  ],
+  "screenshots": [
+    {
+      "src": "/logo.png",
+      "sizes": "150x50",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Noticias",
+      "short_name": "Noticias",
+      "description": "Ver todas las noticias",
+      "url": "/?source=pwa",
+      "icons": [
+        {
+          "src": "/favicon.png",
+          "sizes": "32x32"
+        }
+      ]
+    }
+  ]
+}

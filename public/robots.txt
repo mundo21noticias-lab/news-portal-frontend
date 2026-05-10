@@ -1,0 +1,33 @@
+# MundoXXI - Noticias de República Dominicana
+# https://mundoxxi.com
+
+# Permitir acceso general
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*.json$
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# Sitemap
+Sitemap: https://mundoxxi.com/sitemap.xml
+Sitemap: https://mundoxxi.com/sitemap-articles.xml
+
+# Host
+Host: https://mundoxxi.com
