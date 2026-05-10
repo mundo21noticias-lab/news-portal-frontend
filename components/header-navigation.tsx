@@ -27,14 +27,15 @@ function HeaderNavigationComponent({
     >
       <div className="container mx-auto px-4">
         {/* Desktop navigation */}
-        <ul className="hidden lg:flex items-center justify-center gap-2 py-3 overflow-x-auto">
+        <ul className="hidden lg:flex items-center justify-center flex-wrap gap-x-1 gap-y-2 py-2">
           {categories.map((category) => (
-            <li key={category.id}>
+            <li key={category.id} className="flex-shrink-0">
               <Link
                 href={`/category/${category.slug}`}
-                className="px-5 py-2.5 text-base font-bold uppercase tracking-wider text-foreground hover:text-primary transition-all duration-300 rounded-md hover:bg-primary/10"
+                className="relative px-4 py-2 text-[13px] font-bold uppercase tracking-[0.1em] text-foreground/80 hover:text-primary transition-all duration-300 whitespace-nowrap group"
               >
                 {category.name}
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
               </Link>
             </li>
           ))}
