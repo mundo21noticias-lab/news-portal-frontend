@@ -116,7 +116,7 @@ const handleShare = (url: string, target: string) => {
           alt={article.title}
           fill
           priority
-          className="object-cover"
+          className="object-cover object-top"
           sizes="(max-width: 768px) 100vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />

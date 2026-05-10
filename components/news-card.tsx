@@ -91,7 +91,7 @@ export function NewsCard({ article, variant = 'default', priority = false }: New
                 src={imageUrl}
                 alt={article.title}
                 fill
-                className={`object-cover transition-all duration-300 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'
+                className={`object-cover object-top transition-all duration-300 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'
                   }`}
                 onLoad={() => setIsLoaded(true)}
                 onError={() => setHasError(true)}
