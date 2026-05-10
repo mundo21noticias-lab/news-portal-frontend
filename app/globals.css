@@ -279,7 +279,7 @@ article p {
 /* Link styling */
 article a {
   color: var(--primary);
-  text-decoration: underline;
+  text-decoration: none;
   transition: color 0.2s;
 }
 
