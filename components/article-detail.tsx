@@ -169,6 +169,7 @@ const handleShare = (url: string, target: string) => {
 
         {/* Article Content */}
         <article
+          spellCheck="false"
           className="prose prose-sm md:prose-base dark:prose-invert max-w-none mb-12
             prose-headings:font-serif prose-headings:font-bold
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl

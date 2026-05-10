@@ -84,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${sourceSans.variable}`} suppressHydrationWarning>
+    <html lang="es" className={`${playfair.variable} ${sourceSans.variable}`} spellCheck="false" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#FF6A00" />
@@ -116,7 +116,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-background text-foreground" spellCheck={false} suppressHydrationWarning>
         {children}
         <Toaster />
         <Analytics />

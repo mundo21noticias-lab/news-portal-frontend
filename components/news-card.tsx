@@ -82,7 +82,7 @@ export function NewsCard({ article, variant = 'default', priority = false }: New
 
   if (variant === 'horizontal') {
     return (
-      <article ref={cardRef} className="group">
+      <article ref={cardRef} spellCheck="false" className="group">
         <Link href={`/articles/${article.slug || 'not-found'}`} className="flex gap-4">
           <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-muted">
             {!isLoaded && !hasError && <div className="absolute inset-0 bg-muted animate-pulse" />}
@@ -121,7 +121,7 @@ export function NewsCard({ article, variant = 'default', priority = false }: New
   }
 
   return (
-    <article ref={cardRef} className="group flex flex-col h-full">
+    <article ref={cardRef} spellCheck="false" className="group flex flex-col h-full">
       <Link href={`/articles/${article.slug || 'not-found'}`} className="flex flex-col h-full">
         <div className={`relative rounded-lg overflow-hidden bg-muted w-full ${variant === 'compact' ? 'aspect-video' : 'aspect-[3/2]'}`}>
           {!isLoaded && !hasError && <div className="absolute inset-0 bg-muted animate-pulse" />}

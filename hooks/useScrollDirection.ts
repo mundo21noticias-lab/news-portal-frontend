@@ -10,17 +10,19 @@ export function useScrollDirection() {
     const updateScrollDir = () => {
       const scrollY = window.pageYOffset;
 
-      // Ignore small scroll movements to prevent fluttering
-      if (Math.abs(scrollY - lastScrollY) < 15) {
+      // Ignore small movements (threshold 30px) to prevent fluttering
+      if (Math.abs(scrollY - lastScrollY) < 30) {
         ticking = false;
         return;
       }
 
-      // Always show header at the very top
-      if (scrollY < 150) {
+      // Always show header at the very top (first 200px)
+      if (scrollY < 200) {
         setIsScrollingDown(false);
       } else {
-        setIsScrollingDown(scrollY > lastScrollY);
+        // Only set scrolling down if we actually moved significantly
+        const scrollingDown = scrollY > lastScrollY;
+        setIsScrollingDown(scrollingDown);
       }
       
       lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -34,7 +36,7 @@ export function useScrollDirection() {
       }
     };
 
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
