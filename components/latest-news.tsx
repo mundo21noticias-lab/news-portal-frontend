@@ -77,7 +77,7 @@ export function LatestNews({ initialArticles }: LatestNewsProps) {
   }, [loadMore, hasMore, loading]);
 
   return (
-    <section className="py-8 lg:py-12">
+    <section className="py-8 lg:py-12" spellCheck="false">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">
