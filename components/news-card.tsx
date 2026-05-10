@@ -29,7 +29,7 @@ function NewsCardSkeleton({ variant = 'default' }: { variant?: 'default' | 'comp
 
   return (
     <div className="animate-pulse">
-      <div className={`bg-muted rounded-lg ${variant === 'compact' ? 'h-40' : 'h-48'}`} />
+      <div className={`bg-muted rounded-lg w-full ${variant === 'compact' ? 'aspect-video' : 'aspect-[3/2]'}`} />
       <div className="mt-3 space-y-2">
         <div className="h-3 w-20 bg-muted rounded" />
         <div className="h-5 bg-muted rounded w-full" />
@@ -121,16 +121,16 @@ export function NewsCard({ article, variant = 'default', priority = false }: New
   }
 
   return (
-    <article ref={cardRef} className="group">
-      <Link href={`/articles/${article.slug || 'not-found'}`} className="block">
-        <div className={`relative rounded-lg overflow-hidden bg-muted ${variant === 'compact' ? 'h-40' : 'h-48'}`}>
+    <article ref={cardRef} className="group flex flex-col h-full">
+      <Link href={`/articles/${article.slug || 'not-found'}`} className="flex flex-col h-full">
+        <div className={`relative rounded-lg overflow-hidden bg-muted w-full ${variant === 'compact' ? 'aspect-video' : 'aspect-[3/2]'}`}>
           {!isLoaded && !hasError && <div className="absolute inset-0 bg-muted animate-pulse" />}
           {!hasError ? (
             <Image
               src={imageUrl}
               alt={article.title}
               fill
-              className={`object-cover transition-all duration-500 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'
+              className={`object-cover object-top transition-all duration-500 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
               onLoad={() => setIsLoaded(true)}
               onError={() => setHasError(true)}

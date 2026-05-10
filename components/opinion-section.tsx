@@ -45,7 +45,7 @@ export function OpinionSection({ articles }: OpinionSectionProps) {
                         src={article.imageUrl}
                         alt={article.author}
                         fill
-                        className={`object-cover transition-opacity duration-300 ${loadedImages[article.id] ? 'opacity-100' : 'opacity-0'
+                        className={`object-cover object-top transition-opacity duration-300 ${loadedImages[article.id] ? 'opacity-100' : 'opacity-0'
                           }`}
                         onLoad={() => setLoadedImages(prev => ({ ...prev, [article.id]: true }))}
                         sizes="56px"

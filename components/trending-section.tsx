@@ -101,7 +101,7 @@ export function TrendingSection({ articles }: TrendingSectionProps) {
                     src={article.imageUrl}
                     alt={article.title}
                     fill
-                    className={`object-cover transition-all duration-500 group-hover:scale-105 ${loadedImages[article.id] ? 'opacity-100' : 'opacity-0'
+                    className={`object-cover object-top transition-all duration-500 group-hover:scale-105 ${loadedImages[article.id] ? 'opacity-100' : 'opacity-0'
                       }`}
                     onLoad={() => setLoadedImages(prev => ({ ...prev, [article.id]: true }))}
                     sizes="288px"

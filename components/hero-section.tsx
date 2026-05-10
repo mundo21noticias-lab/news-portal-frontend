@@ -65,7 +65,7 @@ export function HeroSection({ featuredArticle, sideArticles }: HeroSectionProps)
                     src={featuredArticle.imageUrl}
                     alt={featuredArticle.title}
                     fill
-                    className={`object-cover transition-opacity duration-300 ${mainImageLoaded ? 'opacity-100' : 'opacity-0'
+                    className={`object-cover object-top transition-opacity duration-300 ${mainImageLoaded ? 'opacity-100' : 'opacity-0'
                       }`}
                     onLoad={() => setMainImageLoaded(true)}
                     priority
@@ -94,7 +94,7 @@ export function HeroSection({ featuredArticle, sideArticles }: HeroSectionProps)
                         src={article.imageUrl}
                         alt={article.title}
                         fill
-                        className={`object-cover transition-all duration-300 group-hover:scale-105 ${sideImagesLoaded[article.id] ? 'opacity-100' : 'opacity-0'
+                        className={`object-cover object-top transition-all duration-300 group-hover:scale-105 ${sideImagesLoaded[article.id] ? 'opacity-100' : 'opacity-0'
                           }`}
                         onLoad={() => setSideImagesLoaded(prev => ({ ...prev, [article.id]: true }))}
                         sizes="80px"
