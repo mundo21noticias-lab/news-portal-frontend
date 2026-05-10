@@ -9,11 +9,14 @@ export function useScrollDirection() {
       const currentScrollY = window.scrollY;
       const scrollDifference = currentScrollY - lastScrollYRef.current;
 
-      // Con cualquier scroll hacia abajo se oculta (incluso 1px)
-      // Solo reaparece al scroll hacia arriba
-      if (scrollDifference > 0 && currentScrollY > 0) {
+      if (Math.abs(scrollDifference) < 10) return;
+
+      // Para evitar el "flicker" (parpadeo) infinito por el cambio de altura del sticky header:
+      // Solo encogemos si pasamos de 200px hacia abajo.
+      // Y solo lo volvemos a expandir si llegamos casi arriba del todo (<= 50px).
+      if (scrollDifference > 0 && currentScrollY > 200) {
         setIsScrollingDown(true);
-      } else if (currentScrollY === 0) {
+      } else if (currentScrollY <= 50) {
         setIsScrollingDown(false);
       }
 

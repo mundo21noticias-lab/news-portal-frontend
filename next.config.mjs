@@ -15,6 +15,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'www.mundoxxi.com' },
       { protocol: 'https', hostname: 'mundoxxi.com' },
       { protocol: 'https', hostname: '*.googleusercontent.com' },
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
     ],
   },
   turbopack: {
