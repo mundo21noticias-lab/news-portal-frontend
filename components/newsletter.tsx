@@ -39,7 +39,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-gradient-to-br from-secondary to-secondary/80">
+    <section className="py-12 lg:py-16 bg-gradient-to-br from-secondary to-secondary/80" spellCheck="false">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           {/* Icon */}

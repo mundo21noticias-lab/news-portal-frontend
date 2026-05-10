@@ -297,3 +297,19 @@ article strong {
 article em {
   font-style: italic;
 }
+
+/* Fuerza bruta para ocultar rallas rojas de ortografía y gramática del navegador */
+::spelling-error {
+  text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+::grammar-error {
+  text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+* {
+  -webkit-spellcheck: none;
+  spellcheck: false;
+}

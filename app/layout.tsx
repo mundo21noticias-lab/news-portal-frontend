@@ -116,7 +116,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-background text-foreground" spellCheck={false} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-background text-foreground" spellCheck="false" suppressHydrationWarning>
         {children}
         <Toaster />
         <Analytics />
