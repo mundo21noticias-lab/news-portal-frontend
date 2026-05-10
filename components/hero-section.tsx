@@ -17,7 +17,7 @@ export function HeroSection({ featuredArticle, sideArticles }: HeroSectionProps)
   const [sideImagesLoaded, setSideImagesLoaded] = useState<Record<string, boolean>>({});
 
   return (
-    <section className="py-8 lg:py-12">
+    <section className="py-8 lg:py-12" spellCheck="false">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Featured Article */}

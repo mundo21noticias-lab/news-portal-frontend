@@ -34,7 +34,7 @@ export function BreakingNewsTicker({ articles }: BreakingNewsTickerProps) {
     const currentArticle = articles[currentIndex];
 
     return (
-        <div className="flex items-center gap-2 flex-1 min-w-0 mx-1 mb-2">
+        <div className="flex items-center gap-2 flex-1 min-w-0 mx-1 mb-2" spellCheck="false">
             {/* Icon y label */}
             <div className="flex items-center gap-1 flex-shrink-0 animate-pulse">
                 <AlertCircle className="h-4 w-4 text-primary" />
