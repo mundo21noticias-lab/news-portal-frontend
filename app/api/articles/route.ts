@@ -9,11 +9,12 @@ export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const pageSize = parseInt(searchParams.get('pageSize') || '9');
-    const lastDocId = searchParams.get('lastDocId');
+    const offset = parseInt(searchParams.get('offset') || '0');
 
-    // For simplicity, we'll fetch all articles and manually paginate
-    // In production, you might want to pass lastDocId to getArticlesPaginated
-    const { articles, hasMore } = await getArticlesPaginated(pageSize);
+    // Fetch all articles and manually paginate using offset
+    const allArticles = await getArticlesPaginated(1000); // get up to 1000
+    const articles = allArticles.articles.slice(offset, offset + pageSize);
+    const hasMore = offset + pageSize < allArticles.articles.length;
 
     return NextResponse.json({
       success: true,

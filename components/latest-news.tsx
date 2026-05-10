@@ -43,10 +43,14 @@ export function LatestNews({ initialArticles }: LatestNewsProps) {
         if (uniqueNewArticles.length > 0) {
           setArticles(prev => [...prev, ...uniqueNewArticles]);
           setOffset(prev => prev + uniqueNewArticles.length);
+          setHasMore(data.hasMore !== false);
+        } else {
+          // Todos son duplicados, no hay más reales para mostrar
+          setHasMore(false);
         }
+      } else {
+        setHasMore(false);
       }
-
-      setHasMore(data.hasMore !== false && newArticles.length > 0);
     } catch (error) {
       console.error('Error loading more articles:', error);
       setHasMore(false);
