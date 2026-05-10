@@ -71,7 +71,7 @@ export function Header({ categories = [] }: HeaderProps) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-card border-b border-border">
+    <header className={`sticky top-0 z-50 bg-card border-b border-border transition-transform duration-500 ease-in-out ${isScrollingDown ? '-translate-y-full' : 'translate-y-0'}`}>
       {/* Top bar con lema */}
       <div className="border-b border-border bg-secondary">
         <div className="container mx-auto px-4 py-2">
@@ -88,12 +88,12 @@ export function Header({ categories = [] }: HeaderProps) {
       <HeaderTrendingBar
         categories={categories}
         currentDate={currentDate}
-        isScrollingDown={isScrollingDown}
+        isScrollingDown={false} // Desactivamos su ocultamiento interno
         onSearchClick={handleSearchClick}
       />
 
       {/* Logo section - separate container */}
-      <div className={`${isScrollingDown ? styles.logoCompressed : styles.logoExpanded}`}>
+      <div className="py-4">
         <div className="container mx-auto px-4">
           {/* Mobile: Left menu button and right actions */}
           <div className="lg:hidden flex items-center justify-between gap-2 mb-2">
@@ -133,7 +133,7 @@ export function Header({ categories = [] }: HeaderProps) {
                 alt="MundoXXI"
                 width={280}
                 height={100}
-                className={`${isScrollingDown ? styles.logoSmall : styles.logoLarge} w-auto drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-105`}
+                className="h-[100px] md:h-[120px] w-auto drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-105"
                 priority
               />
             </Link>
@@ -143,7 +143,7 @@ export function Header({ categories = [] }: HeaderProps) {
 
       {/* Breaking news component */}
       <div className="container mx-auto px-4">
-        <HeaderBreakingNews articles={breakingNews} isScrollingDown={isScrollingDown} />
+        <HeaderBreakingNews articles={breakingNews} isScrollingDown={false} />
       </div>
 
       {/* Search bar */}
@@ -168,7 +168,7 @@ export function Header({ categories = [] }: HeaderProps) {
       {/* Navigation component */}
       <HeaderNavigation
         categories={categories}
-        isScrollingDown={isScrollingDown}
+        isScrollingDown={false}
         isMenuOpen={isMenuOpen}
         onMenuToggle={handleMenuToggle}
       />
